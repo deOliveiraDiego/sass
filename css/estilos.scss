@@ -1,13 +1,16 @@
 $cor-padrao: #c24e4b;
 $cor-auxiliar: #1e2c35;
 $cor-branca: #fff;
-$raio: 0.3em;
 
-@mixin border-radius {
+@mixin border-radius($raio: 0.3em) {
   -webkit-border-radius: $raio;
   border-radius: $raio;
 }
 
+@mixin default-shadow {
+  -webkit-box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+}
 /** Geral **/
 body {
   font-family: "Roboto Slab", serif;
@@ -105,8 +108,8 @@ header .container {
   border: 0;
   padding: 0.6em;
   font-size: 1.2em;
-  @include border-radius;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include border-radius(50px);
+  @include default-shadow;
   font-weight: bold;
 }
 
@@ -230,7 +233,7 @@ header .container {
   height: 38px;
   font-size: 1.2em;
   @include border-radius;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include default-shadow;
   margin-left: 2em;
 }
 
@@ -325,7 +328,7 @@ textarea {
   height: 38px;
   font-size: 1.2em;
   @include border-radius;
-  box-shadow: 0 2px 6.65px 0.35px rgba(0, 0, 0, 0.3);
+  @include default-shadow;
 }
 
 /** Footer **/
